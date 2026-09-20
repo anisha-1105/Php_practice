@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        e_name:
+        <input type="text" name="e_name" id="">
+        <br>
+        Email:
+        <input type="text" name="email" id="">
+        <br>
+        phone:
+        <input type="number" name="phone" id="">
+        <br>
+        department:
+        <input type="text" name="department" id="">
+        <br>
+        salary:
+        <input type="iny" name="salary" id="">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+<?php
+include "db.php";
+if ($_SERVER["REQUEST_METHOD"]==="POST") {
+    $e_name=$_POST["e_name"];
+    $email=$_POST["email"];
+    $phone=$_POST["phone"];
+    $department=$_POST["department"];
+    $salary=$_POST["salary"];
+    $sql=$conn->prepare("insert into emp values(?,?,?,?,?)");
+    $sql->bind_param('ssisi',$e_name,$email,$phone,$department,$salary);
+    if ($sql->execute()) {
+        echo "Data Inserted";
+    }
+}
+?>

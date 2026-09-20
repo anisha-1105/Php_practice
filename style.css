@@ -1,0 +1,45 @@
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(pink,rgb(105, 60, 105),rgb(81, 81, 195));
+            background-size: 500% 500%;
+            animation: gd 5s ease infinite;
+        }
+
+        @keyframes gd {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100%;
+            }
+        }
+
+        .container {
+            box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.526);
+            max-width: 1000px;
+            border-radius: 10px;
+            margin-top: 50px;
+            padding: 20px;
+            margin-left: 200px;
+            height: 500px;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+            font-weight: bolder;
+            border-collapse: collapse;
+            height: 400px;
+            color: black;
+        }
+        tr:nth-child(odd) {
+            background-color: rgba(235, 104, 104, 0.403);
+        }
+        tr:nth-child(even) {
+            background-color:white;
+        }
